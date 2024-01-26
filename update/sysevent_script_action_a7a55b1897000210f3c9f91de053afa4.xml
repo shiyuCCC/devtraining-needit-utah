@@ -3,30 +3,28 @@
         <active>true</active>
         <condition_script/>
         <description/>
-        <event_name>x_58872_needit.dueSoonNeedItTasks</event_name>
-        <name>Update Due Soon NeedIt Task Priority</name>
+        <event_name>x_58872_needit.overdueNeedItTask</event_name>
+        <name>Update Overdue NeedIt Task Priority</name>
         <order>100</order>
-        <script><![CDATA[// Set the record priority to 2 - High
-current.priority = 3;
+        <script><![CDATA[// Set the record priority to 1 - Critical
+current.priority = 1;
 // Update the record in the database
-current.update();
-
-]]></script>
+current.update();]]></script>
         <synchronous>false</synchronous>
         <sys_class_name>sysevent_script_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-04-11 01:17:26</sys_created_on>
+        <sys_created_on>2024-01-26 14:41:40</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>702daba90f8232000d030dbce1050e4e</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Update Due Soon NeedIt Task Priority</sys_name>
+        <sys_id>a7a55b1897000210f3c9f91de053afa4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Update Overdue NeedIt Task Priority</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sysevent_script_action_702daba90f8232000d030dbce1050e4e</sys_update_name>
+        <sys_update_name>sysevent_script_action_a7a55b1897000210f3c9f91de053afa4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-26 15:44:55</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:43:53</sys_updated_on>
     </sysevent_script_action>
 </record_update>
