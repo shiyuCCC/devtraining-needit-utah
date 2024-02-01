@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="5594581693cc02104fa1796efaba1085" extends="sys_import_set_row" label="Import Sys User Staging" max_length="40" name="x_58872_needit_import_sys_user_staging" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Department_snow" label="Department_snow" max_length="40" name="u_department_snow" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=First_Name" label="First_Name" max_length="40" name="u_first_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Group" label="Group" max_length="40" name="u_group" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Language_en" label="Language_en" max_length="40" name="u_language_en" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Last_Name" label="Last_Name" max_length="40" name="u_last_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=User_ID" label="User_ID" max_length="40" name="u_user_id" type="string"/>
+    </element>
+</database>

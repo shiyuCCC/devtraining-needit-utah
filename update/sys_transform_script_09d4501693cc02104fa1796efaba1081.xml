@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <map display_value="Import Sys User Tranform Map">d294541693cc02104fa1796efaba10b7</map>
+        <order>200</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+
+    gs.info('This is the Import Sys User Transform Map');
+    gs.info('The source u_user_id ' + source.u_user_id.toString());
+    gs.info('The source u_group ' + source.u_group.toString());
+    // Add your code here
+
+    // Get user
+    var user = new GlideRecord('sys_user');
+    user.addQuery('user_name', source.u_user_id.toString());
+    if (user.query()) {
+        gs.info('===user sys id===' + user.sys_id);
+
+        // Get group
+        var group = new GlideRecord('sys_user_group');
+        group.addQuery('name', source.u_group.toString());
+        if (group.query()) {
+
+            // Insert into group member table
+            var groupMember = new GlideRecord('sys_user_grmember');
+            groupMember.user = user.sys_id;
+            groupMember.group = group.sys_id;
+
+            if (groupMember.insert()) {
+                gs.info("User successfully added to the group.");
+            } else {
+                gs.error("Failed to add user to the group. Error: " + groupMember.getErrorMessage());
+            }
+
+        } else {
+            gs.error("Group not found for name: " + source.u_group.toString());
+        }
+
+    } else {
+        gs.error("User not found for user_name: " + source.u_user_id.toString());
+    }
+
+    //Question: how to use log variable, where to find the log info?
+
+
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-01 05:45:25</sys_created_on>
+        <sys_id>09d4501693cc02104fa1796efaba1081</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>onBefore</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_transform_script_09d4501693cc02104fa1796efaba1081</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-02-01 15:24:52</sys_updated_on>
+        <when>onBefore</when>
+    </sys_transform_script>
+</record_update>
